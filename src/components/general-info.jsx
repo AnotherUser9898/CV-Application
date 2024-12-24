@@ -14,7 +14,6 @@ function GeneralInfo({ info, handleChange }) {
                 type="text"
                 id="name"
                 name="name"
-                required
                 value={info.name}
                 onChange={handleChange}
             />
@@ -24,7 +23,6 @@ function GeneralInfo({ info, handleChange }) {
                 type="email"
                 name="email"
                 id="email"
-                required
                 value={info.email}
                 onChange={handleChange}
             />
@@ -34,7 +32,6 @@ function GeneralInfo({ info, handleChange }) {
                 type="tel"
                 name="phone"
                 id="phone"
-                required
                 value={info.phone}
                 onChange={handleChange}
             />

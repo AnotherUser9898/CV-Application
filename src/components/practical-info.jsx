@@ -59,7 +59,6 @@ function PracticalInfo({
                     handleChange(e, uniqueId)
                 }}
             />
-            <button className="addCompany">Add Company</button>
         </div>
     )
 }

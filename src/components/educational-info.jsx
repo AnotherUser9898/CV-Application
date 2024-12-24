@@ -48,8 +48,6 @@ function EduInfo({
                     handleChange(e, uniqueId)
                 }}
             />
-
-            <button className="addSchool">Add School</button>
         </div>
     )
 }

@@ -1,37 +1,127 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { CV } from './components/CV'
+import { Display } from './components/display'
 import './App.css'
 
 function App() {
-    const [count, setCount] = useState(0)
+    const [mode, setMode] = useState('Submit')
+
+    const [general, setGeneral] = useState({
+        name: '',
+        email: '',
+        phone: '',
+    })
+    const [educational, setEducational] = useState([
+        {
+            uniqueId: crypto.randomUUID(),
+            schoolName: '',
+            titleOfStudy: '',
+            dateOfStudy: '',
+        },
+    ])
+    const [practical, setPractical] = useState([
+        {
+            uniqueId: crypto.randomUUID(),
+            companyName: '',
+            positionTitle: '',
+            startDate: '',
+            endDate: '',
+        },
+    ])
+
+    function handleChange(e) {
+        const targetAttribute = String(e.target.id)
+        const targetValue = String(e.target.value)
+        setGeneral({ ...general, [targetAttribute]: targetValue })
+    }
+
+    function handleEducationalChange(e, uniqueId) {
+        const targetAttribute = String(e.target.name)
+        const targetValue = String(e.target.value)
+        setEducational(
+            educational.map((edu) => {
+                if (edu.uniqueId == uniqueId) {
+                    return { ...edu, [targetAttribute]: targetValue }
+                } else {
+                    return edu
+                }
+            })
+        )
+    }
+
+    function handlePracticalChange(e, uniqueId) {
+        const targetAttribute = String(e.target.name)
+        const targetValue = String(e.target.value)
+        setPractical(
+            practical.map((pr) => {
+                if (pr.uniqueId == uniqueId) {
+                    return { ...pr, [targetAttribute]: targetValue }
+                } else {
+                    return pr
+                }
+            })
+        )
+    }
+
+    function addEducationalRecord(e) {
+        e.preventDefault()
+        setEducational([
+            ...educational,
+            {
+                uniqueId: crypto.randomUUID(),
+                schoolName: '',
+                titleOfStudy: '',
+                dateOfStudy: '',
+            },
+        ])
+    }
+
+    function addPracticalRecord(e) {
+        e.preventDefault()
+        setPractical([
+            ...practical,
+            {
+                uniqueId: crypto.randomUUID(),
+                companyName: '',
+                positionTitle: '',
+                startDate: '',
+                endDate: '',
+            },
+        ])
+    }
 
     return (
         <>
-            <div>
-                <a href="https://vite.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank">
-                    <img
-                        src={reactLogo}
-                        className="logo react"
-                        alt="React logo"
-                    />
-                </a>
-            </div>
-            <h1>Vite + React</h1>
-            <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                </button>
-                <p>
-                    Edit <code>src/App.jsx</code> and save to test HMR
-                </p>
-            </div>
-            <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-            </p>
+            {mode == 'Submit' ? (
+                <CV
+                    general={general}
+                    educational={educational}
+                    practical={practical}
+                    handleChange={handleChange}
+                    handleEducationalChange={handleEducationalChange}
+                    handlePracticalChange={handlePracticalChange}
+                    addEducationalRecord={addEducationalRecord}
+                    addPracticalRecord={addPracticalRecord}
+                />
+            ) : (
+                <Display
+                    generalInformation={general}
+                    educationalInformation={educational}
+                    practicalInformation={practical}
+                />
+            )}
+            <button
+                className="action"
+                onClick={(e) => {
+                    if (e.target.textContent == 'Edit') {
+                        setMode('Submit')
+                    } else {
+                        setMode('Edit')
+                    }
+                }}
+            >
+                {mode}
+            </button>
         </>
     )
 }

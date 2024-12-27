@@ -25,6 +25,7 @@ function EduInfo({
                 onChange={(e) => {
                     handleChange(e, uniqueId)
                 }}
+                required
             />
 
             <label htmlFor={`titleOfStudy${uniqueId}`}>Title of Study</label>
@@ -36,6 +37,7 @@ function EduInfo({
                 onChange={(e) => {
                     handleChange(e, uniqueId)
                 }}
+                required
             />
 
             <label htmlFor={`dateOfStudy${uniqueId}`}>Date of Study</label>
@@ -47,6 +49,7 @@ function EduInfo({
                 onChange={(e) => {
                     handleChange(e, uniqueId)
                 }}
+                required
             />
         </div>
     )

@@ -90,6 +90,15 @@ function App() {
         ])
     }
 
+    function onSubmit(e, currMode) {
+        e.preventDefault()
+        if (currMode == 'Edit') {
+            setMode('Submit')
+        } else {
+            setMode('Edit')
+        }
+    }
+
     return (
         <>
             {mode == 'Submit' ? (
@@ -102,26 +111,18 @@ function App() {
                     handlePracticalChange={handlePracticalChange}
                     addEducationalRecord={addEducationalRecord}
                     addPracticalRecord={addPracticalRecord}
+                    mode={mode}
+                    onSubmit={onSubmit}
                 />
             ) : (
                 <Display
                     generalInformation={general}
                     educationalInformation={educational}
                     practicalInformation={practical}
+                    mode={mode}
+                    onEdit={onSubmit}
                 />
             )}
-            <button
-                className="action"
-                onClick={(e) => {
-                    if (e.target.textContent == 'Edit') {
-                        setMode('Submit')
-                    } else {
-                        setMode('Edit')
-                    }
-                }}
-            >
-                {mode}
-            </button>
         </>
     )
 }

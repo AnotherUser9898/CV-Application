@@ -12,6 +12,8 @@ function CV({
     handlePracticalChange,
     addEducationalRecord,
     addPracticalRecord,
+    mode,
+    onSubmit,
 }) {
     CV.propTypes = {
         general: PropTypes.object,
@@ -22,6 +24,8 @@ function CV({
         handlePracticalChange: PropTypes.func,
         addEducationalRecord: PropTypes.func,
         addPracticalRecord: PropTypes.func,
+        mode: PropTypes.string,
+        onSubmit: PropTypes.func,
     }
     const educationalList = educational.map((record) => (
         <EduInfo
@@ -47,7 +51,13 @@ function CV({
     ))
 
     return (
-        <form action="">
+        <form
+            action=""
+            onSubmit={(e) => {
+                e.preventDefault()
+                onSubmit(e, mode)
+            }}
+        >
             <GeneralInfo info={general} handleChange={handleChange} />
 
             <fieldset className="educational">
@@ -73,6 +83,7 @@ function CV({
                     Add Company
                 </button>
             </fieldset>
+            <button type="submit">Submit</button>
         </form>
     )
 }

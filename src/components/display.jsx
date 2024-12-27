@@ -6,11 +6,15 @@ function Display({
     generalInformation,
     educationalInformation,
     practicalInformation,
+    mode,
+    onEdit,
 }) {
     Display.propTypes = {
         generalInformation: PropTypes.object,
         educationalInformation: PropTypes.array,
         practicalInformation: PropTypes.array,
+        mode: PropTypes.string,
+        onEdit: PropTypes.func,
     }
 
     const general = (
@@ -57,6 +61,10 @@ function Display({
                 <h2 className="practicalHeading">Practical Heading</h2>
                 {practical}
             </section>
+
+            <button className="edit" onClick={(e) => onEdit(e, mode)}>
+                Edit
+            </button>
         </div>
     )
 }

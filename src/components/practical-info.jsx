@@ -28,6 +28,7 @@ function PracticalInfo({
                 onChange={(e) => {
                     handleChange(e, uniqueId)
                 }}
+                required
             />
             <label htmlFor={`positionTitle${uniqueId}`}>Position Title</label>
             <input
@@ -38,6 +39,7 @@ function PracticalInfo({
                 onChange={(e) => {
                     handleChange(e, uniqueId)
                 }}
+                required
             />
             <label htmlFor={`startDate${uniqueId}`}>Start Date</label>
             <input
@@ -48,6 +50,7 @@ function PracticalInfo({
                 onChange={(e) => {
                     handleChange(e, uniqueId)
                 }}
+                required
             />
             <label htmlFor={`endDate${uniqueId}`}>End Date</label>
             <input
@@ -58,6 +61,7 @@ function PracticalInfo({
                 onChange={(e) => {
                     handleChange(e, uniqueId)
                 }}
+                required
             />
         </div>
     )

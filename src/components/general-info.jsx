@@ -16,6 +16,7 @@ function GeneralInfo({ info, handleChange }) {
                 name="name"
                 value={info.name}
                 onChange={handleChange}
+                required
             />
 
             <label htmlFor="email">Email</label>
@@ -25,6 +26,7 @@ function GeneralInfo({ info, handleChange }) {
                 id="email"
                 value={info.email}
                 onChange={handleChange}
+                required
             />
 
             <label htmlFor="phone">Phone Number</label>
@@ -34,6 +36,7 @@ function GeneralInfo({ info, handleChange }) {
                 id="phone"
                 value={info.phone}
                 onChange={handleChange}
+                required
             />
         </fieldset>
     )

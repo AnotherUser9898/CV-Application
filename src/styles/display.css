@@ -1,0 +1,39 @@
+dt,dd {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: start;
+}
+
+.style-container {
+    width: 100%;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dl {
+    display: grid;
+    justify-items: start;
+    width: 100%;
+    row-gap: 1rem;
+
+}
+
+dd {
+    border-radius: 5px;
+    width: 100%;
+    background-color: #e2e8f0;
+    padding: 2px 0px 2px 4px;
+}
+
+button {
+    background-color: #38bdf8;
+    color: white;
+    font-weight: bold;
+    padding: 2px 4px;
+    font-size: large;
+    width: 80px;
+    height: 35px;
+}

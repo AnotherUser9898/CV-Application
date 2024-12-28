@@ -7,14 +7,20 @@ function EduDisplay({ schoolName, titleOfStudy, dateOfStudy }) {
     }
     return (
         <dl>
-            <dt>School Name</dt>
-            <dd>{schoolName}</dd>
+            <div className="style-container">
+                <dt>School Name</dt>
+                <dd>{schoolName}</dd>
+            </div>
 
-            <dt>Title Of Study</dt>
-            <dd>{titleOfStudy}</dd>
+            <div className="style-container">
+                <dt>Title Of Study</dt>
+                <dd>{titleOfStudy}</dd>
+            </div>
 
-            <dt>Date of Study</dt>
-            <dd>{dateOfStudy}</dd>
+            <div className="style-container">
+                <dt>Date of Study</dt>
+                <dd>{dateOfStudy}</dd>
+            </div>
         </dl>
     )
 }

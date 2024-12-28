@@ -8,17 +8,25 @@ function PracticalDisplay({ companyName, positionTitle, startDate, endDate }) {
     }
     return (
         <dl>
-            <dt>Company Name</dt>
-            <dd>{companyName}</dd>
+            <div className="style-container">
+                <dt>Company Name</dt>
+                <dd>{companyName}</dd>
+            </div>
 
-            <dt>Position Title</dt>
-            <dd>{positionTitle}</dd>
+            <div className="style-container">
+                <dt>Position Title</dt>
+                <dd>{positionTitle}</dd>
+            </div>
 
-            <dt>Start Date</dt>
-            <dd>{startDate}</dd>
+            <div className="style-container">
+                <dt>Start Date</dt>
+                <dd>{startDate}</dd>
+            </div>
 
-            <dt>End Date</dt>
-            <dd>{endDate}</dd>
+            <div className="style-container">
+                <dt>End Date</dt>
+                <dd>{endDate}</dd>
+            </div>
         </dl>
     )
 }

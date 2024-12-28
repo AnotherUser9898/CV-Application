@@ -1,6 +1,7 @@
 import { GeneralInfo } from './general-info'
 import { EduInfo } from './educational-info'
 import { PracticalInfo } from './practical-info'
+import '../styles/form.css'
 import PropTypes from 'prop-types'
 
 function CV({
@@ -51,40 +52,42 @@ function CV({
     ))
 
     return (
-        <form
-            action=""
-            onSubmit={(e) => {
-                e.preventDefault()
-                onSubmit(e, mode)
-            }}
-        >
-            <GeneralInfo info={general} handleChange={handleChange} />
-
-            <fieldset className="educational">
-                <legend>Educational Experience</legend>
-
-                {educationalList}
-                <button
-                    className="addEducationalRecord"
-                    onClick={addEducationalRecord}
-                >
-                    Add School
-                </button>
-            </fieldset>
-
-            <fieldset className="practical">
-                <legend>Practical Experience</legend>
-
-                {PracitcalList}
-                <button
-                    className="addPracticalRecord"
-                    onClick={addPracticalRecord}
-                >
-                    Add Company
-                </button>
-            </fieldset>
-            <button type="submit">Submit</button>
-        </form>
+        <div className="info-page">
+            <h1 className="info-title">CV form</h1>
+            <form
+                action=""
+                onSubmit={(e) => {
+                    e.preventDefault()
+                    onSubmit(e, mode)
+                }}
+            >
+                <fieldset className="general">
+                    <legend>General Information</legend>
+                    <GeneralInfo info={general} handleChange={handleChange} />
+                </fieldset>
+                <fieldset className="educational">
+                    <legend>Educational Experience</legend>
+                    {educationalList}
+                    <button
+                        className="addEducationalRecord"
+                        onClick={addEducationalRecord}
+                    >
+                        Add School
+                    </button>
+                </fieldset>
+                <fieldset className="practical">
+                    <legend>Practical Experience</legend>
+                    {PracitcalList}
+                    <button
+                        className="addPracticalRecord"
+                        onClick={addPracticalRecord}
+                    >
+                        Add Company
+                    </button>
+                </fieldset>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     )
 }
 

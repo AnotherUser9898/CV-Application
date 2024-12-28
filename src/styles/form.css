@@ -1,0 +1,37 @@
+.addEducationalRecord,.addPracticalRecord {
+    width: max-content;
+    font-size: 15px;
+    align-self: center;
+}
+
+form {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.field-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-container {
+    display: flex;
+    gap: 2rem;
+}
+
+label {
+    font-weight: bold;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+form > button {
+    align-self: center;
+}

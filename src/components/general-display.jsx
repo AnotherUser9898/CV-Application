@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import '../styles/display.css'
 function GenDisplay({ name, email, phone }) {
     GenDisplay.propTypes = {
         name: PropTypes.string,
@@ -8,14 +9,20 @@ function GenDisplay({ name, email, phone }) {
 
     return (
         <dl>
-            <dt>Name</dt>
-            <dd>{name}</dd>
+            <div className="style-container">
+                <dt>Name</dt>
+                <dd>{name}</dd>
+            </div>
 
-            <dt>Email</dt>
-            <dd>{email}</dd>
+            <div className="style-container">
+                <dt>Email</dt>
+                <dd>{email}</dd>
+            </div>
 
-            <dt>Phone Number</dt>
-            <dd>{phone}</dd>
+            <div className="style-container">
+                <dt>Phone Number</dt>
+                <dd>{phone}</dd>
+            </div>
         </dl>
     )
 }

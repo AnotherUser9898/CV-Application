@@ -6,39 +6,41 @@ function GeneralInfo({ info, handleChange }) {
     }
 
     return (
-        <fieldset id="general">
-            <legend>General Information</legend>
-
-            <label htmlFor="name">Name</label>
-            <input
-                type="text"
-                id="name"
-                name="name"
-                value={info.name}
-                onChange={handleChange}
-                required
-            />
-
-            <label htmlFor="email">Email</label>
-            <input
-                type="email"
-                name="email"
-                id="email"
-                value={info.email}
-                onChange={handleChange}
-                required
-            />
-
-            <label htmlFor="phone">Phone Number</label>
-            <input
-                type="tel"
-                name="phone"
-                id="phone"
-                value={info.phone}
-                onChange={handleChange}
-                required
-            />
-        </fieldset>
+        <div className="info-container">
+            <div className="field-container">
+                <label htmlFor="name">Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={info.name}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+            <div className="field-container">
+                <label htmlFor="email">Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    value={info.email}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+            <div className="field-container">
+                <label htmlFor="phone">Phone Number</label>
+                <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    value={info.phone}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+        </div>
     )
 }
 
